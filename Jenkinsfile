@@ -12,9 +12,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
-                sh 'node time.js'
-                sh 'node test11.js'
+                // sh 'npm install'
+                sh './jenkins/scripts/robot.sh'
             }
         }
     }
