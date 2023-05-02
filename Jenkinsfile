@@ -13,6 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 // sh 'npm install'
+                // sh 'chmod 744 ${WORKSPACE}@script/shell-script.sh' // 获取权限
                 sh './jenkins/scripts/robot.sh'
             }
         }
