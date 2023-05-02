@@ -12,9 +12,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'node time.js'
                 sh 'npm install'
                 sh 'node time.js'
+                sh 'node test11.js'
             }
         }
     }
