@@ -6,6 +6,6 @@ curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4848de26-980a-4c3e-8d
    {
     	"msgtype": "text",
     	"text": {
-        	"content": "hello world122"
+        	"content": "hello world1222"
     	}
    }'
