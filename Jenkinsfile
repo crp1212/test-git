@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'rm -rf node_modules'
                 sh 'npm ci'
                 sh "chmod +x -R ${env.WORKSPACE}" // 获取权限
                 // sh './jenkins/scripts/robot.sh'
