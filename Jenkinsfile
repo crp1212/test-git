@@ -26,7 +26,7 @@ pipeline {
                         echo  "继续执行"
                         sh ("node test11.js")
                     }else{
-                        sh ("node robo.js")
+                        sh ("node robo.js -f")
                     }
                 }
             }
