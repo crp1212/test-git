@@ -9,11 +9,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh "chmod +x -R ${env.WORKSPACE}" // 获取权限
                 sh 'npm install'
+                // sh 'npm install'
                 // sh 'npm i yarn'
                 // sh 'rm -rf node_modules'
                 // sh 'yarn'
-                // sh "chmod +x -R ${env.WORKSPACE}" // 获取权限
                 // sh './jenkins/scripts/robot.sh'
                 // sh 'node robo.js'
                  //sh './jenkins/scripts/test.sh'
