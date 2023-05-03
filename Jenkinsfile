@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sn 'npm i yarn'
+                sh 'npm i yarn'
                 sh 'rm -rf node_modules'
                 sh 'yarn'
                 sh "chmod +x -R ${env.WORKSPACE}" // 获取权限
