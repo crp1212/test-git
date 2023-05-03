@@ -9,8 +9,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'rm -rf node_modules'
-                sh 'npm cache clean --force'
                 sh 'npm install'
                 // sh 'npm i yarn'
                 // sh 'rm -rf node_modules'
@@ -21,19 +19,19 @@ pipeline {
                  //sh './jenkins/scripts/test.sh'
                  // sh 'node test11.js'
                  // 脚本执行
-                //  script{
-                //     def code = sh (
-                //         script: "./jenkins/scripts/test.sh",
-                //         returnStatus: true  // 注意得加上这个， 不然 sh 执行 不返回 状态 ,jenkins 执行到这里 如果 grep 还是 找不到 东西的话 又会报 Error : script returned exit code 1 的错
-                //     )
-                //     // code为0代表执行成功
-                //     if (code==0){
-                //         echo  "继续执行"
-                //         sh ("node test11.js")
-                //     }else{
-                //         sh ("node robo.js -f")
-                //     }
-                // }
+                 script{
+                    def code = sh (
+                        script: "./jenkins/scripts/test.sh",
+                        returnStatus: true  // 注意得加上这个， 不然 sh 执行 不返回 状态 ,jenkins 执行到这里 如果 grep 还是 找不到 东西的话 又会报 Error : script returned exit code 1 的错
+                    )
+                    // code为0代表执行成功
+                    if (code==0){
+                        echo  "继续执行"
+                        sh ("node test11.js")
+                    }else{
+                        sh ("node robo.js -f")
+                    }
+                }
             }
         }
     }
