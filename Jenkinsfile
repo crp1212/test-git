@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
           // image 'mcr.microsoft.com/powershell'
-          image 'node:14.5.0-slim'
+          image 'node:lts-buster-slim'
           args '-p 3000:3000'
         }
     }
