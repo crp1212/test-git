@@ -12,7 +12,9 @@ pipeline {
                 // sh 'npm install'
                 // sh "chmod +x -R ${env.WORKSPACE}" // 获取权限
                 // sh './jenkins/scripts/robot.sh'
-                sh 'node robo.js'
+                // sh 'node robo.js'
+                 sh 'node time.js'
+                 sh 'node test11.js'
             }
         }
     }
